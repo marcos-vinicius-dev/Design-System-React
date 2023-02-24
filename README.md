@@ -64,13 +64,3 @@ The project includes Jest and React Testing Library for testing components. To r
 bashCopy code
 
 `npm test-storybook`
-
-Contributing
-------------
-
-To contribute to this project, please follow the guidelines outlined in the [CONTRIBUTING.md](https://chat.openai.com/CONTRIBUTING.md) file.
-
-License
--------
-
-This project is licensed under the MIT License. See the [LICENSE](https://chat.openai.com/LICENSE) file for details.
