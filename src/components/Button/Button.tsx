@@ -1,16 +1,17 @@
 import { cva } from "class-variance-authority";
 import { Slot } from '@radix-ui/react-slot';
-import { ReactNode } from "react";
+import { ReactNode, ButtonHTMLAttributes } from "react";
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode
-    asChild?: boolean
+    asChild?: boolean,
+    className?: string
 }
 
 const textStyles = cva([
     'w-full',
-    'py-4', 
-    'px-3', 
+    'py-3', 
+    'px-4', 
     'bg-cyan-500', 
     'rounded', 
     'font-semibold',
@@ -22,10 +23,15 @@ const textStyles = cva([
     'ring-white'
 ])
 
-export const Button = ({ children, asChild }: ButtonProps) => {
+export const Button = ({ children, asChild, className, ...props }: ButtonProps) => {
     const Component = asChild ? Slot : 'button'
 
     return (
-        <Component className={textStyles()}>{children}</Component>
+        <Component 
+            className={textStyles({ className })}
+            {...props}
+        >
+            {children}
+        </Component>
     )
 }

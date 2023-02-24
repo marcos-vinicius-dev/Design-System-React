@@ -5,7 +5,8 @@ import { ReactNode } from "react";
 export interface HeadingProps {
     size?: 'sm' | 'md' | 'lg'
     children: ReactNode
-    asChild?: boolean
+    asChild?: boolean,
+    className?: string
 }
 
 const headingStyles = cva(['text-gray-100', 'font-bold', 'font-sans'], {
@@ -22,10 +23,10 @@ const headingStyles = cva(['text-gray-100', 'font-bold', 'font-sans'], {
     }
 });
 
-export const Heading = ({ size, children, asChild }: HeadingProps) => {
+export const Heading = ({ size, children, asChild, className }: HeadingProps) => {
     const Component = asChild ? Slot : 'h2'
 
     return (
-        <Component className={headingStyles({ size })}>{children}</Component>
+        <Component className={headingStyles({ size, className })}>{children}</Component>
     )
 }

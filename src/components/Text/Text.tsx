@@ -5,7 +5,8 @@ import { ReactNode } from "react";
 export interface TextProps {
     size?: 'sm' | 'md' | 'lg'
     children: ReactNode
-    asChild?: boolean
+    asChild?: boolean,
+    className?: string
 }
 
 const textStyles = cva(['text-gray-100', 'font-sans'], {
@@ -18,14 +19,14 @@ const textStyles = cva(['text-gray-100', 'font-sans'], {
     },
 
     defaultVariants: {
-        size: "md"
+        size: "sm"
     }
 });
 
-export const Text = ({ size, children, asChild }: TextProps) => {
+export const Text = ({ size, children, asChild, className }: TextProps) => {
     const Component = asChild ? Slot : 'span'
 
     return (
-        <Component className={textStyles({ size })}>{children}</Component>
+        <Component className={textStyles({ size, className })}>{children}</Component>
     )
 }
