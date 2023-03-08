@@ -1,7 +1,7 @@
 Lab-DS: Design System React
 ===========================
 
-https://marcos-vinicius-dev.github.io/design-system-react/
+Demo: https://marcos-vinicius-dev.github.io/design-system-react/
 
 This is the repository for the Lab-DS Design System React, a collection of reusable components, styles, and guidelines used across multiple projects. This design system is built with React and other important technologies.
 
